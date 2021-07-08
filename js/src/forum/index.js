@@ -1,5 +1,5 @@
 import { extend } from 'flarum/common/extend';
-import app from 'flarum/common/app';
+import app from 'flarum/forum/app';
 import UsersSearchSource from 'flarum/common/components/UsersSearchSource';
 import LinkButton from 'flarum/common/components/LinkButton';
 import IndexPage from 'flarum/common/components/IndexPage';
@@ -20,7 +20,7 @@ app.initializers.add('fof-user-directory', (app) => {
     };
 
     extend(UsersSearchSource.prototype, 'view', function (view, query) {
-        if (!view) {
+        if (!view || app.forum.attribute('userDirectoryDisableGlobalSearchSource')) {
             return;
         }
 

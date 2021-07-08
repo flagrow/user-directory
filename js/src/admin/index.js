@@ -1,4 +1,4 @@
-import app from 'flarum/common/app';
+import app from 'flarum/admin/app';
 import SortMap from '../common/utils/SortMap';
 
 export { SortMap };
@@ -22,6 +22,11 @@ app.initializers.add('fof-user-directory', (app) => {
         .registerSetting({
             setting: 'fof-user-directory.use-small-cards',
             label: app.translator.trans('fof-user-directory.admin.settings.use-small-cards'),
+            type: 'boolean',
+        })
+        .registerSetting({
+            setting: 'fof-user-directory.disable-global-search-source',
+            label: app.translator.trans('fof-user-directory.admin.settings.disable-global-search-source'),
             type: 'boolean',
         })
         .registerSetting({

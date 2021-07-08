@@ -21,6 +21,7 @@ fof-user-directory:
             link: Add link on homepage for users able to see the directory
             default-sort: Default sort
             use-small-cards: Use small user cards
+            disable-global-search-source: Do not add User Directory to the Flarum global search field
 
     lib:
         sort:
